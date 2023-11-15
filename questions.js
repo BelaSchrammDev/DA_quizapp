@@ -104,7 +104,7 @@ const quizzes = [
                     'G0',
                     'M5',
                 ],
-                right_index: x,
+                right_index: 2,
             },
             {
                 question: 'Welcher Code bedeutet "Optional Stopp"',

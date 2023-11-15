@@ -1,0 +1,69 @@
+:root {
+    --header_color: white;
+    --header_backgroud_color: #45496D;
+
+    --header_hight: 50px;
+    --footer_min_height: 50px;
+
+    --main_section_width: 1440px;
+    --padding_left_right: clamp(5px, 1.5vw, 50px);
+
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background: #0B0D21;
+    margin: 0px;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: var(--header_backgroud_color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.section_header {
+    color: var(--header_color);
+    height: var(--header_hight);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.main_container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--padding_left_right);
+    padding-right: var(--padding_left_right);
+    max-width: var(--main_section_width);
+    flex-grow: 1;
+}
+
+.hide {
+    display: none;
+}
+
+/* ------------------------------------------ */
+
+
+
+.quiz_box {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    max-width: 700px;
+}
