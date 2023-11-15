@@ -90,9 +90,9 @@ function clickAnswer(index) {
     } else {
         // fail
         audioFail.play();
-        addFailClass(quest.right_index);
+        addFailClass(index);
     }
-    addSuccessClass(index);
+    addSuccessClass(quest.right_index);
 }
 
 
