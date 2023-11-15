@@ -22,6 +22,22 @@ function isQuizEnd() { return currentQuiz.questions.length <= currentQuizQuestio
 function addIndexToQuiz(quiz, index) { quiz.index = index; }
 
 
+function getAnswerDivID(index) { return `quiz_answer_${index}`; }
+
+
+function addSuccessClass(index) {
+    document.getElementById(getAnswerDivID(index)).classList.add('quiz_answer_success');
+}
+
+
+function addFailClass(index) {
+    document.getElementById(getAnswerDivID(index)).classList.add('quiz_answer_fail');
+}
+
+
+function getCurrentQuestion() { return currentQuiz.questions[currentQuizQuestion]; }
+
+
 function replaceTags(text) {
     let returnText = text.replaceAll('<', '&lt;');
     returnText = returnText.replaceAll('>', '&gt;');
@@ -46,7 +62,7 @@ function initQuiz() {
 
 
 function showQuestion() {
-    let quest = currentQuiz.questions[currentQuizQuestion];
+    let quest = getCurrentQuestion();
     let answerHtml = '';
     document.getElementById('quiz_question').innerHTML = replaceTags(quest.question);
     for (let index = 0; index < quest.answers.length; index++) {
@@ -66,11 +82,24 @@ function clickNextButton() {
 }
 
 
+function clickAnswer(index) {
+    let quest = getCurrentQuestion();
+    if (quest.right_index == index) {
+        // success
+        audioSuccess.play();
+    } else {
+        // fail
+        audioFail.play();
+        addFailClass(quest.right_index);
+    }
+    addSuccessClass(index);
+}
+
+
 function getAnswerHtml(index, answer) {
-    const charArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G',];
     return `
-        <div class="quiz_answer">
-        <span>${charArray[index]}</span>
+        <div id="${getAnswerDivID(index)}" onclick="clickAnswer(${index})" class="quiz_answer">
+        <span>${'ABCDEFGHI'[index]}</span>
         <span>${answer}</span>
         </div>
     `;

@@ -212,6 +212,22 @@ header {
     align-items: stretch;
 }
 
+.quiz_answer_success {
+    background-color: #B7F799 !important;
+}
+
+.quiz_answer_success span:first-child {
+    background-color: #4CC017 !important;
+}
+
+.quiz_answer_fail {
+    background-color: #FFA3A4 !important;
+}
+
+.quiz_answer_fail span:first-child {
+    background-color: #F71918 !important;
+}
+
 .quiz_answer {
     margin: 5px;
     padding: 10px;
