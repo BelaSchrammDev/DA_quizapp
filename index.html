@@ -31,7 +31,16 @@
                         <span id="quiz_description_tag"></span>
                         <span id="quiz_description_long"></span>
                     </div>
-                    <button class="start_button">Quiz Starten</button>
+                    <button onclick="clickQuizStart()" class="start_button">Quiz Starten</button>
+                </div>
+                <div id="quiz_question_and_answers" class="quiz_question_and_answers hide">
+                    <span id="quiz_question" class="quiz_question">Wer hat HTML erfunden</span>
+                    <div id="quiz_answers" class="quiz_answers">
+                    </div>
+                    <div style="flex-grow: 1;"></div>
+                    <div id="div_next_button" class="div_next_button">
+                        <button onclick="clickNextButton()" class="next_button">Weiter</button>
+                    </div>
                 </div>
             </div>
         </div>
