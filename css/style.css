@@ -132,6 +132,50 @@ header {
     width: 5px;
 }
 
+/* ------------------------------------------ */
+
+.quiz_start {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    background-image: url('../img/brainbg.jpg');
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.quiz_description {
+    font-family: 'PT Sans';
+    font-weight: 800;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;
+    width: 100%;
+    overflow: hidden;
+}
+
+.quiz_description span {
+    text-align: center;
+}
+
+.start_button {
+    background-color: #FF4E10;
+    border-radius: 5px;
+    border: unset;
+    padding: 5px;
+    color: white;
+}
+
+.start_button:hover {
+    background-color: #ffa17f;
+}
+
 @media (max-width: 750px) {
     :root {
         --quiz_box_width: 95vw;

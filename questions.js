@@ -153,6 +153,15 @@ const quizzes = [
                 ],
                 right_index: 1,
             },
+            {
+                question: 'Mit welchen Befehl wird Konstante Schnittgeschwindigkeit gesetzt',
+                answers: [
+                    'G99',
+                    'G96',
+                    'G97',
+                ],
+                right_index: 1,
+            },
         ]
     }
 ]
