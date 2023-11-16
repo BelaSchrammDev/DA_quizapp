@@ -103,7 +103,7 @@ function clickNextButton() {
 
 
 function setAnswerProgressBar(barID) {
-    const barColorArray = ['lightgray', 'green', 'red'];
+    const barColorArray = ['#D6D6D6', '#4CC017', '#F71918'];
     let progressHtml = '';
     for (let index = 0; index < rightAnswers.length; index++) {
         const barColor = barColorArray[rightAnswers[index]];
