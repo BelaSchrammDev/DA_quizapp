@@ -98,7 +98,9 @@ function clickAnswer(index) {
 
 function getAnswerHtml(index, answer) {
     return `
-        <div id="${getAnswerDivID(index)}" onclick="clickAnswer(${index})" class="quiz_answer">
+        <div id="${getAnswerDivID(index)}"
+            onclick="clickAnswer(${index})"
+            class="flex_r_fs_ce flex_gap_10 quiz_answer">
         <span>${'ABCDEFGHI'[index]}</span>
         <span>${answer}</span>
         </div>
@@ -128,7 +130,7 @@ function setQuizDescription(quiz) {
 
 function getQuizTypeListItem(quiz) {
     return `
-        <div class="quiz_type">
+        <div class="flex_r_fs_st flex_gap_20 m_y_10">
         <div class="quiz_type_select" ${currentQuizSelect == quiz ? 'style="background-color: white;"' : ''}></div>
         <span onclick="clickQuizType(${quiz.index})">${quiz.quizTag}</span>
         </div>

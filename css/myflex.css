@@ -1,0 +1,189 @@
+/* flex main classes */
+
+/* row */
+
+.flex_r_ce_ce {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_r_ce_fe {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.flex_r_ce_fs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.flex_r_fe_ce {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex_r_fs_ce {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex_r_fs_st {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* column */
+
+.flex_c_ce_ce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex_c_ce_st {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.flex_c_fs_st {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.flex_c_sb_fe {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.flex_c_sb_ce {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex_c_sb_st {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/* flex-grow */
+
+.flex_gr_1 {
+    flex-grow: 1;
+}
+
+/* gap */
+
+.flex_gap_10 {
+    gap: 10px;
+}
+
+.flex_gap_20 {
+    gap: 20px;
+}
+
+/* spacing */
+
+/* padding all */
+
+.p_5 {
+    padding: 5px;
+}
+
+.p_10 {
+    padding: 10px;
+}
+
+.p_20 {
+    padding: 20px;
+}
+
+.p_30 {
+    padding: 30px;
+}
+
+.p_50 {
+    padding: 50px;
+}
+
+/* margin all */
+
+.m_5 {
+    margin: 5px;
+}
+
+.m_10 {
+    margin: 10px;
+}
+
+.m_20 {
+    margin: 20px;
+}
+
+.m_30 {
+    margin: 30px;
+}
+
+.m_50 {
+    margin: 50px;
+}
+
+/* margin top and bottom */
+
+.m_y_5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.m_y_10 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.m_y_20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.m_y_30 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.m_y_50 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+/* cursor */
+
+.c_pointer {
+    cursor: pointer;
+}
+
+.c_default {
+    cursor: default;
+}
+

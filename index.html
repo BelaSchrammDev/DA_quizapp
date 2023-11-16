@@ -7,6 +7,7 @@
     <title>Quiz App</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/myflex.css">
     <script src="script.js"></script>
     <script src="questions.js"></script>
 </head>
@@ -20,28 +21,33 @@
     </header>
 
     <section class="main_content">
-        <div class="quiz_box">
-            <div class="quiz_box_sidebar">
-                <img src="./img/logo.png" alt="">
+        <div class="flex_r_fs_st quiz_box">
+            <nav class="flex_c_fs_st">
+                <img class="quiz_logo" src="./img/logo.png" alt="">
                 <div id="quiz_box_sidebar_list" class="quiz_box_sidebar_list"></div>
-            </div>
-            <div class="quiz_box_content">
-                <div id="quiz_start" class="quiz_start">
-                    <div id="quiz_description" class="quiz_description">
+            </nav>
+            <div class="quiz_box_content flex_c_ce_st flex_gr_1">
+
+                <!-- quiz choise tab -->
+                <div id="quiz_start" class="flex_c_sb_st flex_gr_1 quiz_start p_20">
+                    <div class="flex_c_ce_ce flex_gr_1 flex_gap_20 quiz_description">
                         <span id="quiz_description_tag"></span>
                         <span id="quiz_description_long"></span>
                     </div>
-                    <button onclick="clickQuizStart()" class="start_button">Quiz Starten</button>
-                </div>
-                <div id="quiz_question_and_answers" class="quiz_question_and_answers hide">
-                    <span id="quiz_question" class="quiz_question">Wer hat HTML erfunden</span>
-                    <div id="quiz_answers" class="quiz_answers">
-                    </div>
-                    <div style="flex-grow: 1;"></div>
-                    <div id="div_next_button" class="div_next_button">
-                        <button onclick="clickNextButton()" class="next_button">Weiter</button>
+                    <div class="flex_r_fe_ce">
+                        <button onclick="clickQuizStart()" class="start_button p_10">Quiz Starten</button>
                     </div>
                 </div>
+
+                <!-- quiz tab -->
+                <div id="quiz_question_and_answers" class="flex_c_ce_st flex_gap_10 flex_gr_1 p_10 hide">
+                    <span id="quiz_question" class="flex_r_ce_fe quiz_question">Wer hat HTML erfunden</span>
+                    <div id="quiz_answers" class="flex_c_fs_st flex_gr_1"></div>
+                    <div class="flex_r_fe_ce">
+                        <button onclick="clickNextButton()" class="next_button p_10">Weiter</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
