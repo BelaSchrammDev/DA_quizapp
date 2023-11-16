@@ -23,6 +23,13 @@
     align-items: flex-start;
 }
 
+.flex_r_ce_st {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+}
+
 .flex_r_fe_ce {
     display: flex;
     flex-direction: row;

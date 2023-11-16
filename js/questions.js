@@ -1,7 +1,7 @@
 const quizzes = [
     {
         quizTag: 'HTML',
-        quizName: 'Fragen rund um das Thema HTML und CSS',
+        quizName: 'Fragen rund um das Thema HTML, CSS und Javascript.',
         quizHeaderImage: '',
         questions: [
             {
@@ -78,7 +78,7 @@ const quizzes = [
     },
     {
         quizTag: 'G Code',
-        quizName: 'Fragen rund um das Thema GCode (CNC Programmierung)',
+        quizName: 'Fragen rund um das Thema GCode (CNC Programmierung)<br>Speziell für CNC Dreh- und Fräsmaschinen',
         quizHeaderImage: '',
         questions: [
             {

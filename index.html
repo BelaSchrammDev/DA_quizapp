@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/fonts.css">
     <link rel="stylesheet" href="./css/myflex.css">
-    <script src="script.js"></script>
-    <script src="questions.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/questions.js"></script>
 </head>
 
 <body onload="init()">
@@ -43,8 +43,30 @@
                 <div id="quiz_question_and_answers" class="flex_c_ce_st flex_gap_10 flex_gr_1 p_10 hide">
                     <span id="quiz_question" class="flex_r_ce_fe quiz_question">Wer hat HTML erfunden</span>
                     <div id="quiz_answers" class="flex_c_fs_st flex_gr_1"></div>
-                    <div class="flex_r_fe_ce">
-                        <button onclick="clickNextButton()" class="next_button p_10">Weiter</button>
+                    <div class="flex_r_fe_ce flex_gap_20">
+                        <div id="answer_progress" class="answer_info_div flex_gr_1"></div>
+                        <button id="next_button" onclick="clickNextButton()" class="next_button p_10">Weiter</button>
+                    </div>
+                </div>
+
+                <!-- quiz finished -->
+                <div id="quiz_finished" class="flex_c_ce_st flex_gr_1 quiz_finished hide">
+                    <div class="flex_r_ce_st flex_gr_1">
+                        <div class="flex_c_ce_st flex_gr_1 flex_gap_20 m_20">
+                            <div class="flex_c_ce_ce flex_gap_10">
+                                <img src="./img/brain result.png" alt="">
+                                <span class="font_rubik_bold">Quiz beendet</span>
+                                <span id="quiz_result_info" class="font_align_center"></span>
+                                <p>Hovern um Fragen nochmals zu sehen</p>
+                                </div>
+                            <div id="answer_progress_finished" class="answer_info_div"></div>
+                        </div>
+                        <div class="flex_c_ce_ce">
+                            <img class="" src="./img/tropy.png" alt="">
+                        </div>
+                    </div>
+                    <div class="flex_r_fe_ce p_20">
+                        <button onclick="clickQuizChoise()" class="start_button p_10">Quiz auswählen</button>
                     </div>
                 </div>
 

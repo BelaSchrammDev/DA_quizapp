@@ -61,6 +61,20 @@ header {
     display: none !important;
 }
 
+.answer_info_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10px;
+    gap: 5px;
+}
+
+.answer_info {
+    height: 100%;
+    border-radius: 100px;
+}
+
 /* ------------------------------------------ */
 
 .main_content {
@@ -78,7 +92,7 @@ header {
 
 .quiz_box {
     width: var(--quiz_box_width);
-    min-height: 500px;
+    min-height: 550px;
     background-color: #27355C;
     border-radius: 10px;
     overflow: hidden;
@@ -197,6 +211,7 @@ header {
     padding: 10px;
     height: max-content;
     background-color: white;
+    border-radius: 5px;
 }
 
 .quiz_answer:hover {
@@ -226,14 +241,23 @@ header {
     border: unset;
     padding: 5px;
     color: black;
+    width: 130px;
 }
 
 .next_button:hover {
-    background-color: #c0c0c0;
+    background-color: #c8d3fc;
 }
 
+/* ------------------------------------------ */
 
+.quiz_finished {
 
+}
+
+.quiz_finished img {
+    height: auto;
+    width: 100px;
+}
 
 @media (max-width: 750px) {
     :root {

@@ -12,6 +12,11 @@
   font-weight: 800;
 }
 
+.font_align_center {
+  text-align: center;
+}
+
+
 /* rubik-300 - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
