@@ -6,9 +6,6 @@ let currentQuizSelect = null;
 let currentQuiz = null;
 let currentQuizQuestion = 0;
 let currentContainerID = '';
-// 0 is unanswered
-// 1 right
-// 2 fail
 let rightAnswers = [];
 
 function init() {
@@ -138,14 +135,14 @@ function playResultSound(answer) {
 }
 
 
-function enabledButton(buttonID) {
+function enableButton(buttonID) {
     document.getElementById(buttonID).disabled = false;
-    document.getElementById(buttonID).style['opacity'] = '1'; 
+    document.getElementById(buttonID).style['opacity'] = '1';
 }
 
 
 function disabledButton(buttonID) {
-    document.getElementById(buttonID).disabled = true; 
+    document.getElementById(buttonID).disabled = true;
     document.getElementById(buttonID).style['opacity'] = '0';
 }
 
@@ -153,17 +150,27 @@ function disabledButton(buttonID) {
 function setButtonText(buttonID, text) { document.getElementById(buttonID).innerHTML = text; }
 
 
-function clickAnswer(index) {
-    if (rightAnswers[currentQuizQuestion] > 0) return; // question alreddy answered
+function isCurrentQuestionAnswered() {
+    return rightAnswers[currentQuizQuestion] > 0;
+}
+
+
+function setAnswerColors(userAnswer, rightAnswer) {
+    if (userAnswer != rightAnswer) addFailClass(userAnswer);
+    addSuccessClass(rightAnswer);
+}
+
+
+function clickAnswer(userAnswer) {
+    if (isCurrentQuestionAnswered()) return;
     const quest = getCurrentQuestion();
-    const result = quest.right_index == index;
+    const result = quest.rightAnswer == userAnswer;
     storeAnswerResult(result);
     playResultSound(result);
     setAnswerProgressBar('answer_progress');
-    enabledButton('next_button');
+    enableButton('next_button');
     if (isQuizEnd()) setButtonText('next_button', 'Quiz beenden');
-    if (!result) addFailClass(index);
-    addSuccessClass(quest.right_index);
+    setAnswerColors(userAnswer, quest.rightAnswer);
 }
 
 
@@ -211,13 +218,35 @@ function getQuizTypeListItem(quiz) {
 
 function clickQuizType(index) {
     if (currentQuiz == null) {  // change only if no quiz is runnung
+        if (isSideBarResponsiv()) burger_menu_close();
         currentQuizSelect = quizzes[index];
         fillQuizBoxSideBar();
     }
 }
 
 
-function clickQuizChoise() {
+function clickQuizReturn() {
     currentQuiz = null;
     showContainer('quiz_start');
+}
+
+
+function isSideBarResponsiv() {
+    return document.getElementById('navbar').style['position'] == 'absolute';
+}
+
+
+function burger_menu_open() {
+    setSideBarStyle('0', 'block');
+}
+
+
+function burger_menu_close() {
+    setSideBarStyle('-180px', 'none');
+}
+
+
+function setSideBarStyle(rightValue, displayValue) {
+    document.getElementById('navbar').style['left'] = rightValue;
+    document.getElementById('burger_menu_overlay').style['display'] = displayValue;
 }

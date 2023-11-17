@@ -3,6 +3,7 @@
 
     --header_color: white;
     --header_backgroud_color: #45496D;
+    --sidebar_background_color: #27355C;
 
     --header_hight: 50px;
     --footer_min_height: 50px;
@@ -38,14 +39,30 @@ header {
     z-index: 100;
 }
 
+header img {
+    height: 30px;
+    width: 0;
+    z-index: 50;
+}
+
+nav {
+    background-color: var(--sidebar_background_color);
+    transition: left 125ms ease-in-out;
+}
+
+.burger_menu_overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 60;
+    backdrop-filter: blur(3px);
+}
+
 .section_header {
     color: var(--header_color);
     height: var(--header_hight);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
 }
 
 .main_container {
@@ -278,10 +295,14 @@ header {
 
     nav {
         position: absolute;
-        top: var(--header_hight);
-        left: 0;
-        transform: translateX(-150px);
-        z-index: 10;
+        top: 0;
+        left: -150px;
+        z-index: 130;
+        height: 100lvh;
+    }
+
+    header img {
+        width: 30px;
     }
 
     .quiz_box_content {

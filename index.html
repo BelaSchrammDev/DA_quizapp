@@ -4,8 +4,11 @@
 <!-- ToDo
 
     o   Sidebar responsiv
+    o   Sidebar restyle
     o   sound on off button
+    o   Quiz break Butto
     o   neues Quiz mit Gewinden
+    o   Images for Quizzes
 
 -->
 
@@ -23,14 +26,16 @@
 <body onload="init()">
 
     <header>
-        <div class="main_container section_header">
+        <div class="main_container section_header flex_r_fs_ce flex_gap_20">
+            <img onclick="burger_menu_open()" id="burger_icon" src="./img/burger.svg" alt="">
+            <div onclick="burger_menu_close()" id="burger_menu_overlay" style="display: none;" class="burger_menu_overlay"></div>
             <h1>Quiz App</h1>
         </div>
     </header>
 
     <section class="main_content">
         <div class="flex_r_fs_st quiz_box">
-            <nav class="flex_c_fs_st">
+            <nav id="navbar" class="flex_c_fs_st">
                 <img class="quiz_logo" src="./img/logo.png" alt="">
                 <div id="quiz_box_sidebar_list" class="quiz_box_sidebar_list"></div>
             </nav>
@@ -65,8 +70,7 @@
                                 <img src="./img/brain result.png" alt="">
                                 <span class="font_rubik_bold">Quiz beendet</span>
                                 <span id="quiz_result_info" class="font_align_center"></span>
-                                <p>Hovern um Fragen nochmals zu sehen</p>
-                                </div>
+                            </div>
                             <div id="answer_progress_finished" class="answer_info_div"></div>
                         </div>
                         <div class="flex_c_ce_ce">
@@ -74,7 +78,7 @@
                         </div>
                     </div>
                     <div class="flex_r_fe_ce p_20">
-                        <button onclick="clickQuizChoise()" class="start_button p_10">Zurück</button>
+                        <button onclick="clickQuizReturn()" class="start_button p_10">Zurück</button>
                     </div>
                 </div>
 

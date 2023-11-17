@@ -12,7 +12,7 @@ const quizzes = [
                     'Tim Berners-Lee',
                     'Justin Biber',
                 ],
-                right_index: 2,
+                rightAnswer: 2,
             },
             {
                 question: 'Was bedeutet das HTML Tag <a>',
@@ -22,7 +22,7 @@ const quizzes = [
                     'Ein Link',
                     'Kursiv',
                 ],
-                right_index: 2,
+                rightAnswer: 2,
             },
             {
                 question: 'Wie bindet man eine Website in eine Website ein',
@@ -32,7 +32,7 @@ const quizzes = [
                     '<frame>',
                     '<frameset>',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
             {
                 question: 'Wie stellt man Text am BESTEN fett dar',
@@ -42,7 +42,7 @@ const quizzes = [
                     '<bold>',
                     '<b>',
                 ],
-                right_index: 0,
+                rightAnswer: 0,
             },
             {
                 question: 'Welches Attribut kann man NICHT für Textarea nutzen',
@@ -52,7 +52,7 @@ const quizzes = [
                     'from',
                     'spellcheck',
                 ],
-                right_index: 0,
+                rightAnswer: 0,
             },
             {
                 question: 'Wie wählst du alle Elemente vom Type <a> mit dem attribut title aus',
@@ -62,7 +62,7 @@ const quizzes = [
                     'a.title {...}',
                     'a=title {...}',
                 ],
-                right_index: 0,
+                rightAnswer: 0,
             },
             {
                 question: 'Wie definiert man in Javascript eine Variable',
@@ -72,7 +72,7 @@ const quizzes = [
                     'rate = 100;',
                     'let rate = 100;',
                 ],
-                right_index: 3,
+                rightAnswer: 3,
             },
         ]
     },
@@ -88,7 +88,7 @@ const quizzes = [
                     'M3',
                     'M9',
                 ],
-                right_index: 0,
+                rightAnswer: 0,
             },
             {
                 question: 'Welcher Befehl setzt die Hauptspindel im Rechtslauf in Gang',
@@ -97,7 +97,7 @@ const quizzes = [
                     'M3',
                     'M5',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
             {
                 question: 'Mit welchen Befehl wird die Hauptspindel gestoppt',
@@ -106,7 +106,7 @@ const quizzes = [
                     'G0',
                     'M5',
                 ],
-                right_index: 2,
+                rightAnswer: 2,
             },
             {
                 question: 'Welcher Code bedeutet "Optional Stopp"',
@@ -115,7 +115,7 @@ const quizzes = [
                     'M1',
                     'M2',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
             {
                 question: 'Mit welchem Code wird die Schneiden- bzw. Fräserradiuskorrektur aufgehoben',
@@ -126,7 +126,7 @@ const quizzes = [
                     'T40',
                     'M44',
                 ],
-                right_index: 2,
+                rightAnswer: 2,
             },
             {
                 question: 'Beim Außenkonturfräsen mit FRK gegen den Uhrzeigersinn setzt man welchen Code ein',
@@ -134,7 +134,7 @@ const quizzes = [
                     'G41',
                     'G42',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
             {
                 question: 'Wit welchen Buchstaben spricht man die Werkzeuge an',
@@ -143,7 +143,7 @@ const quizzes = [
                     'W',
                     'T',
                 ],
-                right_index: 2,
+                rightAnswer: 2,
             },
             {
                 question: 'Beim Außenüberdrehen mit SRK setzt man welchen Code ein',
@@ -151,7 +151,7 @@ const quizzes = [
                     'G41',
                     'G42',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
             {
                 question: 'Mit welchen Befehl wird Konstante Schnittgeschwindigkeit gesetzt',
@@ -160,7 +160,7 @@ const quizzes = [
                     'G96',
                     'G97',
                 ],
-                right_index: 1,
+                rightAnswer: 1,
             },
         ]
     }
