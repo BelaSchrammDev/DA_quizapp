@@ -11,6 +11,8 @@ let rightAnswers = [];
 function init() {
     currentContainerID = 'quiz_start';
     fillQuizBoxSideBar();
+    audioFail.volume = 0.3;
+    audioSuccess.volume = 0.3;
 }
 
 
