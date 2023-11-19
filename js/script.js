@@ -1,6 +1,6 @@
 const audioSuccess = new Audio('./audio/success.mp3');
 const audioFail = new Audio('./audio/fail.mp3');
-let silence = true;
+let silence = false;
 
 let currentQuizSelect = null;
 let currentQuiz = null;
@@ -252,6 +252,12 @@ function burger_menu_open() {
 
 function burger_menu_close() {
     setSideBarStyle('-180px', 'none');
+}
+
+
+function clickSpeaker() {
+    silence = !silence;
+    document.getElementById('speaker_button').src = silence ? './img/speaker.svg' : './img/speaker_silence.svg';
 }
 
 

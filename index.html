@@ -3,7 +3,6 @@
 
 <!-- ToDo
 
-    o   sound on off button
     o   Quiz break Button
     o   neues Quiz mit Gewinden
     o   Images for Quizzes
@@ -37,9 +36,12 @@
             <nav id="navbar" class="flex_c_fs_st">
                 <div class="flex_c_ce_ce flex_gap_10 p_10 m_y_10">
                     <img class="quiz_logo" src="./img/logo.png" alt="">
-                    <span>Verfügbare Quizzes</span>
+                    <span class="font_align_center">Verfügbare Quizzes</span>
                 </div>
                 <div id="quiz_box_sidebar_list" class="quiz_box_sidebar_list selectable"></div>
+                <div class="flex_r_fe_ce sidebar_buttons m_10">
+                    <img id="speaker_button" onclick="clickSpeaker()" src="./img/speaker_silence.svg" alt="">
+                </div>
             </nav>
             <div class="quiz_box_content flex_c_ce_st flex_gr_1">
 

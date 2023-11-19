@@ -4,6 +4,7 @@
     --header_color: white;
     --header_backgroud_color: #45496D;
     --sidebar_background_color: #27355C;
+    --sidebar_background_color_highlight: #384c83;
 
     --header_hight: 50px;
     --footer_min_height: 50px;
@@ -137,6 +138,25 @@ nav {
 
 .selectable span:hover {
     background-color: #394c83;
+}
+
+.sidebar_buttons {
+}
+
+.sidebar_buttons img {
+    cursor: pointer;
+    padding: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    border: 1px solid white;
+    transition: border-radius 125ms ease-in-out,
+            background-color 125ms ease-in-out;
+}
+
+.sidebar_buttons img:hover {
+    border-radius: 1px;
+    background-color: var(--sidebar_background_color_highlight);
 }
 
 .quiz_box_content {
