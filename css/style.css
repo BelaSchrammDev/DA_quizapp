@@ -127,10 +127,13 @@ nav {
 
 .quiz_box_sidebar_list span {
     flex-grow: 1;
+}
+
+.selectable span {
     cursor: pointer;
 }
 
-.quiz_box_sidebar_list span:hover {
+.selectable span:hover {
     background-color: #394c83;
 }
 

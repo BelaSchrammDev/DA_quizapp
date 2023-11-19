@@ -49,6 +49,12 @@ function replaceTags(text) {
 }
 
 
+function disableQuizlist(action) {
+    if(action) document.getElementById('quiz_box_sidebar_list').classList.remove('selectable');
+    else document.getElementById('quiz_box_sidebar_list').classList.add('selectable');
+}
+
+
 function clickQuizStart() {
     if (currentQuizSelect != null) {
         setButtonText('next_button', 'Weiter');
@@ -57,6 +63,8 @@ function clickQuizStart() {
         initQuiz();
         showQuestion();
         setAnswerProgressBar('answer_progress');
+        showContainer('quiz_question_and_answers');
+        disableQuizlist(true);
     }
 }
 
@@ -228,6 +236,7 @@ function clickQuizType(index) {
 function clickQuizReturn() {
     currentQuiz = null;
     showContainer('quiz_start');
+    disableQuizlist(false);
 }
 
 
