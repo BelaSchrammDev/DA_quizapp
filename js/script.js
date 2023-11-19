@@ -50,7 +50,7 @@ function replaceTags(text) {
 
 
 function disableQuizlist(action) {
-    if(action) document.getElementById('quiz_box_sidebar_list').classList.remove('selectable');
+    if (action) document.getElementById('quiz_box_sidebar_list').classList.remove('selectable');
     else document.getElementById('quiz_box_sidebar_list').classList.add('selectable');
 }
 
@@ -217,8 +217,8 @@ function fillQuizBoxSideBar() {
 function getQuizTypeListItem(quiz) {
     return `
         <div class="flex_r_fs_st flex_gap_20 m_y_10">
-        <div class="quiz_type_select" ${currentQuizSelect == quiz ? 'style="background-color: white;"' : ''}></div>
-        <span onclick="clickQuizType(${quiz.index})">${quiz.quizTag}</span>
+            <div class="quiz_type_select" ${currentQuizSelect == quiz ? 'style="background-color: white;"' : ''}></div>
+            <span onclick="clickQuizType(${quiz.index})">${quiz.quizTag}</span>
         </div>
     `;
 }
@@ -241,7 +241,7 @@ function clickQuizReturn() {
 
 
 function isSideBarResponsiv() {
-    return document.getElementById('navbar').style['position'] == 'absolute';
+    return getCssVariablesBool('--responsiv');
 }
 
 
@@ -258,4 +258,14 @@ function burger_menu_close() {
 function setSideBarStyle(rightValue, displayValue) {
     document.getElementById('navbar').style['left'] = rightValue;
     document.getElementById('burger_menu_overlay').style['display'] = displayValue;
+}
+
+
+function getCssVariablesBool(varName) {
+    return getCssVariablesString(varName) == 'true';
+}
+
+
+function getCssVariablesString(varName) {
+    return window.getComputedStyle(document.body).getPropertyValue(varName);
 }

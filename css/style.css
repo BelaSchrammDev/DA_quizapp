@@ -13,6 +13,7 @@
     --main_section_width: 1440px;
     --padding_left_right: clamp(5px, 1.5vw, 50px);
 
+    --responsiv: false;
 }
 
 html {
@@ -122,6 +123,7 @@ nav {
 }
 
 .quiz_box_sidebar_list {
+    border-top: 1px solid white;
     flex-grow: 1;
 }
 
@@ -284,6 +286,7 @@ nav {
 @media (max-width: 500px) {
     :root {
         --quiz_box_width: 100vw;
+        --responsiv: true;
     }
 
     .quiz_box {
@@ -299,7 +302,7 @@ nav {
     nav {
         position: absolute;
         top: 0;
-        left: -150px;
+        left: -200px;
         z-index: 130;
         height: 100lvh;
     }

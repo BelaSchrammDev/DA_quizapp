@@ -3,12 +3,10 @@
 
 <!-- ToDo
 
-    o   Sidebar restyle
     o   sound on off button
     o   Quiz break Button
     o   neues Quiz mit Gewinden
     o   Images for Quizzes
-    o   Sidebar deactivated when quiz runs
 
 -->
 
@@ -28,7 +26,8 @@
     <header>
         <div class="main_container section_header flex_r_fs_ce flex_gap_20">
             <img onclick="burger_menu_open()" id="burger_icon" src="./img/burger.svg" alt="">
-            <div onclick="burger_menu_close()" id="burger_menu_overlay" style="display: none;" class="burger_menu_overlay"></div>
+            <div onclick="burger_menu_close()" id="burger_menu_overlay" style="display: none;"
+                class="burger_menu_overlay"></div>
             <h1>Quiz App</h1>
         </div>
     </header>
@@ -36,7 +35,10 @@
     <section class="main_content">
         <div class="flex_r_fs_st quiz_box">
             <nav id="navbar" class="flex_c_fs_st">
-                <img class="quiz_logo" src="./img/logo.png" alt="">
+                <div class="flex_c_ce_ce flex_gap_10 p_10 m_y_10">
+                    <img class="quiz_logo" src="./img/logo.png" alt="">
+                    <span>Verfügbare Quizzes</span>
+                </div>
                 <div id="quiz_box_sidebar_list" class="quiz_box_sidebar_list selectable"></div>
             </nav>
             <div class="quiz_box_content flex_c_ce_st flex_gr_1">
