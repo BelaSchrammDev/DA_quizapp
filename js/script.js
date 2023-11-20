@@ -5,11 +5,11 @@ let silence = false;
 let currentQuizSelect = null;
 let currentQuiz = null;
 let currentQuizQuestion = 0;
-let currentContainerID = '';
+let currentContainerID = 'quiz_start';
 let rightAnswers = [];
 
+
 function init() {
-    currentContainerID = 'quiz_start';
     fillQuizBoxSideBar();
     audioFail.volume = 0.3;
     audioSuccess.volume = 0.3;
@@ -44,7 +44,7 @@ function addFailClass(index) {
 function getCurrentQuestion() { return currentQuiz.questions[currentQuizQuestion]; }
 
 
-function replaceTags(text) {
+function replaceHTMLTags(text) {
     let returnText = text.replaceAll('<', '&lt;');
     returnText = returnText.replaceAll('>', '&gt;');
     return returnText;
@@ -61,7 +61,6 @@ function clickQuizStart() {
     if (currentQuizSelect != null) {
         setButtonText('next_button', 'Weiter');
         disabledButton('next_button');
-        showContainer('quiz_question_and_answers');
         initQuiz();
         showQuestion();
         setAnswerProgressBar('answer_progress');
@@ -88,9 +87,9 @@ function getEmptyAnswerArray(length) {
 function showQuestion() {
     let quest = getCurrentQuestion();
     let answerHtml = '';
-    document.getElementById('quiz_question').innerHTML = replaceTags(quest.question) + '?';
+    document.getElementById('quiz_question').innerHTML = replaceHTMLTags(quest.question) + '?';
     for (let index = 0; index < quest.answers.length; index++) {
-        answerHtml += getAnswerHtml(index, replaceTags(quest.answers[index]));
+        answerHtml += getAnswerHtml(index, replaceHTMLTags(quest.answers[index]));
     }
     document.getElementById('quiz_answers').innerHTML = answerHtml;
 }
@@ -244,7 +243,7 @@ function clickQuizReturn() {
 
 
 function isSideBarResponsiv() {
-    return getCssVariablesBool('--responsiv');
+    return getCssVariable_Bool('--responsiv');
 }
 
 
@@ -270,11 +269,11 @@ function setSideBarStyle(rightValue, displayValue) {
 }
 
 
-function getCssVariablesBool(varName) {
-    return getCssVariablesString(varName) == 'true';
+function getCssVariable_Bool(varName) {
+    return getCssVariable_String(varName) == 'true';
 }
 
 
-function getCssVariablesString(varName) {
+function getCssVariable_String(varName) {
     return window.getComputedStyle(document.body).getPropertyValue(varName);
 }
