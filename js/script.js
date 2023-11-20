@@ -197,6 +197,7 @@ function getAnswerHtml(index, answer) {
 
 
 function setQuizDescription(quiz) {
+    document.getElementById('quiz_description_image').src = quiz.quizHeaderImage;
     document.getElementById('quiz_description_tag').innerHTML = quiz.quizTag;
     document.getElementById('quiz_description_long').innerHTML = quiz.quizName;
 }

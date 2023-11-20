@@ -2,7 +2,7 @@ const quizzes = [
     {
         quizTag: 'HTML',
         quizName: 'Fragen rund um das Thema HTML, CSS und Javascript.',
-        quizHeaderImage: '',
+        quizHeaderImage: './img/html5.jpg',
         questions: [
             {
                 question: 'Wer hat HTML erfunden',
@@ -79,7 +79,7 @@ const quizzes = [
     {
         quizTag: 'G Code',
         quizName: 'Fragen rund um das Thema GCode (CNC Programmierung)<br>Speziell für CNC Dreh- und Fräsmaschinen',
-        quizHeaderImage: '',
+        quizHeaderImage: './img/cnc.jpg',
         questions: [
             {
                 question: 'Mit welchen Befehl wir die Kühlmittelpumbe eingeschaltet',
