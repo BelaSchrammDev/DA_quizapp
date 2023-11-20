@@ -188,7 +188,7 @@ nav {
 
 .quiz_description img {
     width: 100%;
-    max-height: 50vh;
+    height: 25vh;
     object-fit: cover;
 }
 

@@ -163,5 +163,65 @@ const quizzes = [
                 rightAnswer: 1,
             },
         ]
+    },
+    {
+        quizTag: 'Gewinde',
+        quizName: 'Fragen rund um das Thema Gewinde und Gewindearten',
+        quizHeaderImage: './img/screw.jpg',
+        questions: [
+            {
+                question: 'Welchen Flankenwinkel hat Metrisches Gewinde',
+                answers: [
+                    '55°',
+                    '80°',
+                    '60°',
+                ],
+                rightAnswer: 2,
+            },
+            {
+                question: 'Welchen Flankenwinkel hat Pg (Panzergewinde)',
+                answers: [
+                    '55°',
+                    '80°',
+                    '60°',
+                ],
+                rightAnswer: 1,
+            },
+            {
+                question: 'Welches ist die Bezeichnung für Amerikanisches Trapezgewinde',
+                answers: [
+                    'ACME',
+                    'ASME',
+                    'BSW',
+                ],
+                rightAnswer: 0,
+            },
+            {
+                question: 'Welchen Flankenwinkel hat Trapezgewinde',
+                answers: [
+                    '29°',
+                    '55°',
+                    '30°',
+                    '60°',
+                ],
+                rightAnswer: 2,
+            },
+            {
+                question: 'Was bedeutet M10x2P1',
+                answers: [
+                    'Zweigängiges Metrisches Gewinde mit Steigung 2 und Außendurchmesser 10',
+                    'Zweigängiges Metrisches Gewinde mit Steigung 1 und Außendurchmesser 10',
+                ],
+                rightAnswer: 0,
+            },
+            {
+                question: 'Was bedeutet Fg',
+                answers: [
+                    'Fahrrad Gewinde',
+                    'Fein Gewinde',
+                ],
+                rightAnswer: 0,
+            },
+        ]
     }
 ]
