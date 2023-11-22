@@ -142,6 +142,94 @@
     padding: 50px;
 }
 
+.p_res {
+    padding: clamp(5px, 1.5vw, 50px);
+}
+
+@media (max-width: 500px) {
+    .p_res {
+        padding: 0;
+    }
+}
+
+/* padding left/right */
+
+.p_x_5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.p_x_10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.p_x_20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.p_x_30 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.p_x_50 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.p_x_res {
+    padding-left: clamp(5px, 1.5vw, 50px);
+    padding-right: clamp(5px, 1.5vw, 50px);
+}
+
+@media (max-width: 500px) {
+    .p_x_res {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/* padding top/bottom */
+
+.p_y_5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.p_y_10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.p_y_20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.p_y_30 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.p_y_50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.p_y_res {
+    padding-top: clamp(5px, 1.5vw, 50px);
+    padding-bottom: clamp(5px, 1.5vw, 50px);
+}
+
+@media (max-width: 500px) {
+    .p_y_res {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}
+
 /* margin all */
 
 .m_5 {
@@ -200,4 +288,3 @@
 .c_default {
     cursor: default;
 }
-
