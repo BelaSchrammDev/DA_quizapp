@@ -232,13 +232,6 @@ nav {
     height: 50px;
 }
 
-.quiz_answers {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-}
-
 .quiz_answer_success {
     background-color: #B7F799 !important;
 }
@@ -264,8 +257,11 @@ nav {
     border-radius: 5px;
 }
 
-.quiz_answer:hover {
+.quiz_answer_selectable {
     cursor: pointer;
+}
+
+.quiz_answer_selectable:hover {
     background-color: rgb(230, 230, 230);
 }
 

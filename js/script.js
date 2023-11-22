@@ -165,6 +165,10 @@ function isCurrentQuestionAnswered() {
 
 
 function setAnswerColors(userAnswer, rightAnswer) {
+    const answerDivList = document.getElementById('quiz_answers').children;
+    for (let index = 0; index < answerDivList.length; index++) {
+        answerDivList[index].classList.remove('quiz_answer_selectable');        
+    }
     if (userAnswer != rightAnswer) addFailClass(userAnswer);
     addSuccessClass(rightAnswer);
 }
@@ -187,7 +191,7 @@ function getAnswerHtml(index, answer) {
     return `
         <div id="${getAnswerDivID(index)}"
             onclick="clickAnswer(${index})"
-            class="flex_r_fs_ce flex_gap_10 quiz_answer">
+            class="flex_r_fs_ce flex_gap_10 quiz_answer quiz_answer_selectable">
         <span>${'ABCDEFGHI'[index]}</span>
         <span>${answer}</span>
         </div>
