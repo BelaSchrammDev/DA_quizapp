@@ -82,7 +82,7 @@ const quizzes = [
         quizHeaderImage: './img/cnc.jpg',
         questions: [
             {
-                question: 'Mit welchen Befehl wir die Kühlmittelpumbe eingeschaltet',
+                question: 'Mit welchen Befehl wird die Kühlmittelpumbe eingeschaltet',
                 answers: [
                     'M8',
                     'M3',
@@ -137,7 +137,7 @@ const quizzes = [
                 rightAnswer: 1,
             },
             {
-                question: 'Wit welchen Buchstaben spricht man die Werkzeuge an',
+                question: 'Mit welchen Buchstaben spricht man die Werkzeuge an',
                 answers: [
                     'O',
                     'W',

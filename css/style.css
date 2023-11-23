@@ -99,6 +99,12 @@ nav {
     max-height: 43vh;
 }
 
+.answer_log_list td {
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 .answer_log_list {
