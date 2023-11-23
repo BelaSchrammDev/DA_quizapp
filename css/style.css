@@ -94,6 +94,36 @@ nav {
     border-radius: 100px;
 }
 
+.answer_log_list {
+    overflow-y: auto;
+    max-height: 43vh;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.answer_log_list {
+    scrollbar-width: auto;
+    scrollbar-color: var(--header_backgroud_color) white;
+    scroll-behavior: smooth;
+}
+
+/* Chrome, Edge, and Safari */
+.answer_log_list::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    width: 10px;
+}
+
+.answer_log_list::-webkit-scrollbar-track {
+    background: white;
+}
+
+.answer_log_list::-webkit-scrollbar-thumb {
+    background-color: var(--header_backgroud_color);
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+}
+
+
 /* ------------------------------------------ */
 
 .main_content {

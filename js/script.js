@@ -7,6 +7,7 @@ let currentQuiz = null;
 let currentQuizQuestion = 0;
 let currentContainerID = 'quiz_start';
 let rightAnswers = [];
+const barColorArray = ['#D6D6D6', '#4CC017', '#F71918'];
 
 
 function init() {
@@ -40,8 +41,13 @@ function addIndexToQuiz(quiz, index) { quiz.index = index; }
 function getAnswerDivID(index) { return `quiz_answer_${index}`; }
 
 
-function getCurrentQuestion() { return currentQuiz.questions[currentQuizQuestion]; }
+function getCurrentQuestion() { return getQuestionByIndex(currentQuizQuestion); }
 
+
+function getQuestionByIndex(index) { return currentQuiz.questions[index]; }
+
+
+function getCleanQuestionText(index) { return replaceHTMLTags(getQuestionByIndex(index).question); }
 
 function setButtonText(buttonID, text) { document.getElementById(buttonID).innerHTML = text; }
 
@@ -112,7 +118,7 @@ function showQuestion() {
 function clickNextButton() {
     if (isQuizEnd()) {
         setResultInfo();
-        setAnswerProgressBar('answer_progress_finished');
+        setAnswerLogList();
         showContainer('quiz_finished');
     } else {
         currentQuizQuestion++;
@@ -122,8 +128,17 @@ function clickNextButton() {
 }
 
 
+function setAnswerLogList() {
+    let answerLogHtml = '';
+    for (let index = 0; index < rightAnswers.length; index++) {
+        const answerColor = barColorArray[rightAnswers[index]];
+        answerLogHtml += `<tr style="background-color: ${answerColor}"><td>${getCleanQuestionText(index)}?</td></tr>`
+    }
+    document.getElementById('answer_log_list').innerHTML = `<table><tbody>${answerLogHtml}</tbody></table>`
+}
+
+
 function setAnswerProgressBar(barID) {
-    const barColorArray = ['#D6D6D6', '#4CC017', '#F71918'];
     let progressHtml = '';
     for (let index = 0; index < rightAnswers.length; index++) {
         const barColor = barColorArray[rightAnswers[index]];

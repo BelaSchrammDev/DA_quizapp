@@ -60,6 +60,13 @@
     align-items: center;
 }
 
+.flex_c_ce_fs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .flex_c_ce_st {
     display: flex;
     flex-direction: column;
