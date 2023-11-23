@@ -80,7 +80,7 @@ function disableQuizlist(action) {
 function clickQuizStart() {
     if (currentQuizSelect != null) {
         setButtonText('next_button', 'Weiter');
-        disabledButton('next_button');
+        enableButton('next_button', false);
         initQuiz();
         showQuestion();
         setAnswerProgressBar('answer_progress');
@@ -122,7 +122,7 @@ function clickNextButton() {
         showContainer('quiz_finished');
     } else {
         currentQuizQuestion++;
-        disabledButton('next_button');
+        enableButton('next_button', false);
         showQuestion();
     }
 }
@@ -167,15 +167,9 @@ function playResultSound(answer) {
 }
 
 
-function enableButton(buttonID) {
-    document.getElementById(buttonID).disabled = false;
-    document.getElementById(buttonID).style['opacity'] = '1';
-}
-
-
-function disabledButton(buttonID) {
-    document.getElementById(buttonID).disabled = true;
-    document.getElementById(buttonID).style['opacity'] = '0';
+function enableButton(buttonID, enabled) {
+    document.getElementById(buttonID).disabled = !enabled;
+    document.getElementById(buttonID).style['opacity'] = enabled ? '1' : '0';
 }
 
 
@@ -196,7 +190,7 @@ function clickAnswer(userAnswer) {
     storeAnswerResult(result);
     playResultSound(result);
     setAnswerProgressBar('answer_progress');
-    enableButton('next_button');
+    enableButton('next_button', true);
     if (isQuizEnd()) setButtonText('next_button', 'Quiz beenden');
     setAnswerColors(userAnswer, quest.rightAnswer);
 }
