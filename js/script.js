@@ -16,11 +16,20 @@ function init() {
 }
 
 
-function showContainer(containerID) {
-    if (currentContainerID != '') document.getElementById(currentContainerID).classList.add('hide');
-    document.getElementById(containerID).classList.remove('hide');
-    currentContainerID = containerID;
-}
+function getCssVariable_Bool(varName) { return getCssVariable_String(varName) == 'true'; }
+
+
+function getCssVariable_String(varName) { return window.getComputedStyle(document.body).getPropertyValue(varName); }
+
+
+function isCurrentQuestionAnswered() { return rightAnswers[currentQuizQuestion] > 0; }
+
+
+function storeAnswerResult(answer) { rightAnswers[currentQuizQuestion] = answer ? 1 : 2; }
+
+
+function questionAnswered(index) { return rightAnswers[index] > 0; }
+
 
 function isQuizEnd() { return currentQuiz.questions.length <= currentQuizQuestion + 1; }
 
@@ -31,17 +40,22 @@ function addIndexToQuiz(quiz, index) { quiz.index = index; }
 function getAnswerDivID(index) { return `quiz_answer_${index}`; }
 
 
-function addSuccessClass(index) {
-    document.getElementById(getAnswerDivID(index)).classList.add('quiz_answer_success');
-}
-
-
-function addFailClass(index) {
-    document.getElementById(getAnswerDivID(index)).classList.add('quiz_answer_fail');
-}
-
-
 function getCurrentQuestion() { return currentQuiz.questions[currentQuizQuestion]; }
+
+
+function setButtonText(buttonID, text) { document.getElementById(buttonID).innerHTML = text; }
+
+
+function showContainer(containerID) {
+    if (currentContainerID != '') document.getElementById(currentContainerID).classList.add('hide');
+    document.getElementById(containerID).classList.remove('hide');
+    currentContainerID = containerID;
+}
+
+
+function addClassToAnswerDiv(index, className) {
+    document.getElementById(getAnswerDivID(index)).classList.add(className);
+}
 
 
 function replaceHTMLTags(text) {
@@ -123,18 +137,12 @@ function setAnswerProgressBar(barID) {
 }
 
 
-function questionAnswered(index) { return rightAnswers[index] > 0; }
-
-
 function setResultInfo() {
     let right = 0;
     const numQuestions = currentQuiz.questions.length;
     rightAnswers.forEach((result) => { if (result == 1) right++ });
     document.getElementById('quiz_result_info').innerHTML = `${right} von ${numQuestions} Fragen richtig beantwortet`;
 }
-
-
-function storeAnswerResult(answer) { rightAnswers[currentQuizQuestion] = answer ? 1 : 2; }
 
 
 function playResultSound(answer) {
@@ -156,21 +164,13 @@ function disabledButton(buttonID) {
 }
 
 
-function setButtonText(buttonID, text) { document.getElementById(buttonID).innerHTML = text; }
-
-
-function isCurrentQuestionAnswered() {
-    return rightAnswers[currentQuizQuestion] > 0;
-}
-
-
 function setAnswerColors(userAnswer, rightAnswer) {
     const answerDivList = document.getElementById('quiz_answers').children;
     for (let index = 0; index < answerDivList.length; index++) {
-        answerDivList[index].classList.remove('quiz_answer_selectable');        
+        answerDivList[index].classList.remove('quiz_answer_selectable');
     }
-    if (userAnswer != rightAnswer) addFailClass(userAnswer);
-    addSuccessClass(rightAnswer);
+    if (userAnswer != rightAnswer) addClassToAnswerDiv(userAnswer, 'quiz_answer_fail');
+    addClassToAnswerDiv(rightAnswer, 'quiz_answer_success');
 }
 
 
@@ -232,7 +232,7 @@ function getQuizTypeListItem(quiz) {
 
 function clickQuizType(index) {
     if (currentQuiz == null) {  // change only if no quiz is runnung
-        if (isSideBarResponsiv()) burger_menu_close();
+        if (isSideBarResponsiv()) burgerMenu(false);
         currentQuizSelect = quizzes[index];
         fillQuizBoxSideBar();
     }
@@ -251,19 +251,9 @@ function isSideBarResponsiv() {
 }
 
 
-function burger_menu_open() {
-    setSideBarStyle('0', 'block');
-}
-
-
-function burger_menu_close() {
-    setSideBarStyle('-180px', 'none');
-}
-
-
-function clickSpeaker() {
-    silence = !silence;
-    document.getElementById('speaker_button').src = silence ? './img/speaker.svg' : './img/speaker_silence.svg';
+function burgerMenu(show) {
+    if (show) setSideBarStyle('0', 'block');
+    else setSideBarStyle('-180px', 'none');
 }
 
 
@@ -273,11 +263,9 @@ function setSideBarStyle(rightValue, displayValue) {
 }
 
 
-function getCssVariable_Bool(varName) {
-    return getCssVariable_String(varName) == 'true';
+function clickSpeaker() {
+    silence = !silence;
+    document.getElementById('speaker_button').src = silence ? './img/speaker.svg' : './img/speaker_silence.svg';
 }
 
 
-function getCssVariable_String(varName) {
-    return window.getComputedStyle(document.body).getPropertyValue(varName);
-}
